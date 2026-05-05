@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "5150907c9859e17d",
+        "id": "9797cbf27e8eec0e",
         "type": "tabs",
         "children": [
           {
-            "id": "9fb413885b55768a",
+            "id": "f2a04bd4d8c61197",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "20260505.md",
-                "bFile": "20260505.md",
-                "aRef": ""
+                "file": "20260505.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: 20260505  (Working Tree)"
+              "icon": "lucide-file",
+              "title": "20260505"
             }
           }
         ]
@@ -94,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "20260505.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for 20260505"
             }
           },
           {
@@ -193,10 +194,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9fb413885b55768a",
+  "active": "f2a04bd4d8c61197",
   "lastOpenFiles": [
-    "2026-03-30.md",
+    "Untitled.canvas",
     "20260505.md",
+    "daryl-test.md",
+    "2026-03-30.md",
     "test-from-azure.md",
     "note for daryl.md",
     "Testing....md",
