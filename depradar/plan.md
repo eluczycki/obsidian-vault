@@ -93,3 +93,39 @@ For each package, display:
 - [ ] Data refresh cadence (cron? on-demand?)
 - [ ] How to store/cache package data
 - [ ] Whether to use a DB or just query APIs live
+
+Package Manager Additions:
+
+Language-Specific Package Managers
+
+- npm (Node Package Manager): The default for JavaScript/Node.js, hosting the world's largest software registry.
+- pip: The standard tool for Python, used to install packages from the Python Package Index (PyPI).
+- Maven: A widely used build and dependency manager for Java and other JVM-based projects.
+- Cargo: The built-in manager for Rust, handling both builds and dependency resolution.
+- Composer: The primary tool for PHP, managing project-level libraries.
+- NuGet: The central package manager for the .NET ecosystem (C#, F#, etc.).
+- CocoaPods: A popular dependency manager for Swift and Objective-C Cocoa projects.
+- RubyGems: The standard manager for the Ruby language. [[4](https://missing.csail.mit.edu/2019/package-management/), [5](https://en.wikipedia.org/wiki/List_of_software_package_management_systems), [6](https://builtin.com/software-engineering-perspectives/package-managers), [9](https://www.youtube.com/watch?v=QWkHQ6ifKm0), [10](https://www.devopsschool.com/blog/top-10-package-managers-features-pros-cons-comparison/), [11](https://www.activestate.com/resources/quick-reads/dependency-management-with-pip-pythons-package-manager/#:~:text=Pip%20is%20Python's%20package%20manager%2C%20providing%20essential,one.%20Pip%20will%20not%20flag%20dependency%20conflicts.)]
+
+System-Level Package Managers
+
+These tools manage software and libraries for entire operating systems, often handling core system updates and shared libraries.
+
+- APT (Advanced Package Tool): Used by Debian and Ubuntu-based Linux distributions.
+- DNF (Dandified YUM): The modern replacement for YUM, used in Fedora, RHEL, and CentOS.
+- Homebrew: A popular "missing" package manager for macOS (and Linux), favored by developers for installing CLI tools.
+- Pacman: The package manager for Arch Linux, known for its speed and simplicity.
+- Chocolatey: A popular community-driven package manager for Windows automation. [[6](https://builtin.com/software-engineering-perspectives/package-managers), [10](https://www.devopsschool.com/blog/top-10-package-managers-features-pros-cons-comparison/), [12](https://nareshit.com/blogs/linux-package-management-apt-yum-dnf-guide), [15](https://www.linux.org/threads/package-managers.44959/), [16](https://patchbay.tech/your-promotion-to-package-manager-manager/#:~:text=Homebrew%20is%20far%20from%20the%20only%20command,included%20in%20Linux%20operating%20systems%20by%20default.)]
+
+Specialized & Modern Alternatives
+
+  
+
+Newer tools often focus on better performance, deterministic installs (lock files), or specific data science needs.
+
+- Yarn / pnpm: Popular alternatives to npm for JavaScript that prioritize speed and disk efficiency.
+- Conda: A language-agnostic manager (often used for Python/R) that handles complex environment and binary dependency issues in data science.
+- Poetry / uv: Modern Python tools that combine dependency resolution with virtual environment management. [[5](https://en.wikipedia.org/wiki/List_of_software_package_management_systems), [10](https://www.devopsschool.com/blog/top-10-package-managers-features-pros-cons-comparison/), [17](https://thenewstack.io/how-to-choose-the-best-python-package-management-tool/), [18](https://www.fe.engineer/handbook/package-managers), [21](https://dev.to/adamghill/python-package-manager-comparison-1g98)]
+
+  
+
