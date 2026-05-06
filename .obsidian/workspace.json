@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "depradar/coolify-supabase-bug-report.md",
+                "file": "depradar/plan.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "coolify-supabase-bug-report"
+              "title": "plan"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "depradar/coolify-supabase-bug-report.md",
+                "file": "depradar/plan.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for coolify-supabase-bug-report"
+              "title": "Backlinks for plan"
             }
           },
           {
@@ -211,10 +211,10 @@
   },
   "active": "3faec34ab14d56a3",
   "lastOpenFiles": [
+    "depradar/coolify-supabase-bug-report.md",
     "depradar/knowledge.md",
     "depradar/narrative.md",
     "depradar/coolify-supabase-support-email.md",
-    "depradar/coolify-supabase-bug-report.md",
     "Identity++.md",
     "depradar/plan.md",
     "depradar/status.md",
