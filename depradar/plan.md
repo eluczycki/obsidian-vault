@@ -89,10 +89,37 @@ For each package, display:
 
 ## Decisions (to fill in later)
 
-- [ ] Risk score formula
-- [ ] Data refresh cadence (cron? on-demand?)
-- [ ] How to store/cache package data
-- [ ] Whether to use a DB or just query APIs live
+- [x] Risk score formula
+- [x] Data refresh cadence (on every redeploy via prebuild)
+- [x] How to store/cache package data (static JSON at build time)
+- [ ] Supabase wiring (user accounts, repo scanning, subscriptions)
+- [ ] Responsive design review
+
+## Post-MVP
+
+### Supabase Wiring
+- Add `DATABASE_URL` to Coolify env vars (internal PostgreSQL: `postgresql://10.21.0.X:5432/supabase_db`)
+- Add Prisma or Drizzle ORM
+- Schema: `users` (GitHub OAuth), `user_repos` (linked repos), `package_lists` (curated lists), `scan_history`
+- Build cron/edge function to refresh GitHub data periodically
+
+### Responsive Design
+- Review dashboard grid on mobile (cards may need narrower min-width)
+- Detail page stats row may need scroll/breakdown on small screens
+- Chart toggle buttons may need touch-friendly sizing
+
+### Repo Scanning
+- Allow users to link GitHub repos (OAuth)
+- Scan all `package.json` deps in user repos
+- Score the full dependency graph with actual used versions
+
+### Package Manager Expansions
+- Add pip/PyPI, Cargo/Rust, Go modules support
+- Each new registry needs its own API integration and CVE source
+
+### Alerting & History
+- Email/Slack alerts when a tracked package crosses a risk threshold
+- Historical tracking — show score over time, not just current snapshot
 
 Package Manager Additions:
 
