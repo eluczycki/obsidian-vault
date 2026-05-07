@@ -209,8 +209,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3faec34ab14d56a3",
+  "active": "40ce880a42982d54",
   "lastOpenFiles": [
+    "depradar/cve-shield-preview.html",
+    "depradar/competitors-osv.md",
     "depradar/decisions.md",
     "depradar/plan.md",
     "depradar/coolify-supabase-bug-report.md",
@@ -240,8 +242,6 @@
     "daryl-test.md",
     "2026-03-30.md",
     "test-from-azure.md",
-    "note for daryl.md",
-    "Testing....md",
-    "Welcome.md"
+    "note for daryl.md"
   ]
 }
