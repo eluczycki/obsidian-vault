@@ -6,4 +6,3 @@ Error response from daemon: failed to create task for container: failed to creat
 This is due to `entrypoint.sh` not being executable - quick fix:
 ssh root@45.33.113.111 'chmod +x /data/coolify/services/vmpkgro6mn7041tthd5xfk7l/volumes/api/kong-entrypoint.sh'
 
-
