@@ -27,16 +27,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "depradar/knowledge.md",
+                "file": "depradar/CHANGELOG.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "knowledge"
+              "title": "CHANGELOG"
+            }
+          },
+          {
+            "id": "e0d06819f5090454",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "daryl - may 7 catchup.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "daryl - may 7 catchup"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -109,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "depradar/knowledge.md",
+                "file": "daryl - may 7 catchup.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for knowledge"
+              "title": "Backlinks for daryl - may 7 catchup"
             }
           },
           {
@@ -209,15 +223,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3faec34ab14d56a3",
+  "active": "e0d06819f5090454",
   "lastOpenFiles": [
-    "depradar/plan.md",
+    "Untitled 1.md",
+    "daryl - may 7 catchup.md",
     "depradar/CHANGELOG.md",
+    "depradar/knowledge.md",
+    "depradar/plan.md",
     "depradar/cve-shield-preview.html",
     "depradar/competitors-osv.md",
     "depradar/decisions.md",
     "depradar/coolify-supabase-bug-report.md",
-    "depradar/knowledge.md",
     "depradar/narrative.md",
     "depradar/coolify-supabase-support-email.md",
     "Identity++.md",
@@ -241,8 +257,6 @@
     "depradar",
     "Untitled.canvas",
     "daryl-test.md",
-    "2026-03-30.md",
-    "test-from-azure.md",
-    "note for daryl.md"
+    "2026-03-30.md"
   ]
 }
