@@ -112,6 +112,26 @@ Not viable with raw API at build time. Plan:
 
 ---
 
+## Ecosystem Support (npm + pip + ...)
+
+**Schema:** `ecosystem TEXT NOT NULL DEFAULT 'npm'` — distinguishes package sources.
+
+**Unique key:** `UNIQUE (name, ecosystem)` — allows same package name across ecosystems.
+
+**Example:** `npm request` (npm) and `pypi request` (pip) coexist as separate rows.
+
+**API:** All upserts use `ON CONFLICT (name, ecosystem) DO UPDATE SET ...`
+
+**Current state (2026-05-11):** Only npm packages seeded. Schema ready for pip/PyPI.
+
+**Implementation notes:**
+- `fetch-package.ts` fetches for a specific ecosystem (currently npm only)
+- Future: `fetchPypiData()` for pip packages, same `PackageData` interface
+- Future: `ecosystem` param on detail pages: `/package/pip/requests`
+- `npm_name` column kept (for backward compat with reported_packages FK)
+
+---
+
 ## NIST URL Fix
 
 - Previously used broad `keywordSearch` → returned ~350K unrelated CVEs for common names
