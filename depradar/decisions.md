@@ -38,9 +38,30 @@
 - Open issues >500: +10
 - Open issues >100: +5
 
-### Abandoned Flag Triggers
-- Zero commits in 90 days
-- OR last commit >1 year ago
+### Abandoned Flag Triggers (v3 — npm-aware)
+
+Old algorithm was too blunt: `lodash` has 371k stars and is actively maintained but shows "abandoned" because it hasn't had a GitHub commit in years. Commit frequency ≠ maintenance.
+
+**New algorithm (2026-05-11):**
+
+A package is **ABANDONED** if ANY of:
+- `npm deprecated: true` — maintainer explicitly flagged it
+- No npm releases in 2+ years AND no recent GitHub commits
+
+A package is **ACTIVE (maintained)** if:
+- Has a recent npm release (within 2 years), regardless of GitHub commits
+- OR has recent GitHub activity (within 90 days / last commit within 1 year)
+
+**Why npm releases as primary signal:**
+- Stable packages (lodash, axios, chalk) ship npm versions without GitHub commits
+- npm release = actual distribution = real maintenance signal
+- GitHub commits can be internal/irrelevant (docs, CI, refactors that don't warrant a release)
+
+**Ecosystem-agnostic design:** Other ecosystems (pip, etc.) have their own release cadence signals. The reconnect strategy extends naturally — future `fetch-pypi-data.ts` should extract PyPI release dates using the same pattern.
+
+**UI:** Instead of red `[abandoned]` badge on stale packages → blue `[maintained]` badge on active ones. This surfaces the positive signal, not the negative.
+
+**Known limitation:** Packages without `last_npm_release` populated (seeded before this feature landed) fall back to GitHub commit logic. A full re-seed populates the field for all packages.
 
 ### Velocity Labels (30d commits per month)
 | Commits/mo | Label |
