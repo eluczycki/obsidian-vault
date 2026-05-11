@@ -92,6 +92,7 @@ For each package, display:
 - [x] Risk score formula
 - [x] Data refresh cadence (on every redeploy via prebuild)
 - [x] How to store/cache package data (static JSON at build time)
+- [x] Package repo reconnect strategy (multi-source fallback chain)
 - [ ] Supabase wiring (user accounts, repo scanning, subscriptions)
 - [ ] Responsive design review
 

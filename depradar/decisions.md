@@ -117,3 +117,48 @@ Not viable with raw API at build time. Plan:
 - Previously used broad `keywordSearch` → returned ~350K unrelated CVEs for common names
 - Fixed to use CPE keyword: `keywords=CPE%3A2.3%3Aa%3Apackagename%3Apackagename%3A*...`
 - Filters to actual npm package CVEs matching `node.js` + vendor CPE pattern
+
+---
+
+## Package Repo Reconnect Strategy
+
+**File:** `src/lib/fetch-package.ts`
+
+Many npm packages don't have a `repository` field, or it points elsewhere (Gitea, GitLab, etc.). Without a GitHub repo, we can't fetch commits → package shows zeros and is incorrectly marked abandoned.
+
+### Fallback Chain (in priority order)
+
+| Strategy | Source | When Used |
+|----------|--------|------------|
+| `repository` field | npm registry | Standard package.json field |
+| `homepage` field | npm registry | GitHub URL sometimes here instead |
+| GitHub Search API | `api.github.com/search/repositories?q=${name}+in:name` | No repo/homepage on npm |
+| Known org patterns | Hardcoded org/repo guesses | Last resort for well-known packages |
+
+### GitHub Search Requirements
+To avoid noise from short/generic names (e.g. `ecc`, `fun`, `pay` returning random repos):
+- Must have **exact name match** (case-insensitive)
+- Must have **≥10 stars**
+- Falls back to next strategy if no qualifying result
+
+### Rate Limit Handling
+- GitHub Search: 30 req/min authenticated
+- Batch reconnect adds 2.1s delay between packages
+- Known org patterns: only 1 API call per package (direct `/repos/org/name`)
+
+### Audit Trail
+`PackageData.repoSource` field tracks which strategy found the repo:
+- `"repository"` | `"homepage"` | `"search"` | `"known-org"` | `null`
+
+### Batch Reconnect
+`POST /api/packages/reconnect?limit=N` — re-fetches packages with `github_repo=''` using the full reconnect chain. Used for one-shot remediation of existing DB entries.
+
+### Scope for Other Ecosystems (future)
+- **PyPI/pip:** PyPI exposes `project_urls` JSON field with GitHub links — same chain applies
+- **npm/pnpm:** Use `repository` + `homepage` + Search API (same logic)
+- **NuGet:** Similar `projectUrl` / `repository` fields
+- Extend `fetchPackageData()` ecosystem parameter and swap source API accordingly
+
+- Previously used broad `keywordSearch` → returned ~350K unrelated CVEs for common names
+- Fixed to use CPE keyword: `keywords=CPE%3A2.3%3Aa%3Apackagename%3Apackagename%3A*...`
+- Filters to actual npm package CVEs matching `node.js` + vendor CPE pattern
