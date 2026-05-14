@@ -223,8 +223,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e0d06819f5090454",
+  "active": "40ce880a42982d54",
   "lastOpenFiles": [
+    "ci-secure/plan.md",
+    "ci-secure/narrative.md",
+    "ci-secure",
     "depradar/v0.4-plan.md",
     "daryl-test.md",
     "daryl - may 7 catchup.md",
@@ -253,8 +256,6 @@
     "listsofbests/decisions.md",
     "listsofbests",
     "gitradar/status.md",
-    "gitradar/plan.md",
-    "gitradar/decisions.md",
     "gitradar",
     "depradar",
     "Untitled.canvas"
