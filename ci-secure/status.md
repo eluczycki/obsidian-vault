@@ -14,3 +14,8 @@
 - Loops.so email capture setup
 - PIP/PNPM package manager search (future)
 - Waitlist button on homepage
+
+### Search Dropdown (pending)
+- Re-enable ecosystem dropdown once PIP/PNPM are in the API
+- Dropdown should filter by ecosystem (not just display label)
+- PIP search currently hits NPM — placeholder until backend is ready
